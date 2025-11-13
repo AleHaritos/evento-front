@@ -7,6 +7,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< Updated upstream
+=======
+import { HomeModule } from './features/home/home.module';
+import { EventosModule } from './features/eventos/eventos.module';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [

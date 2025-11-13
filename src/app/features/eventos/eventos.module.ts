@@ -12,9 +12,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatIconModule } from '@angular/material/icon'
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 
 import localePT from '@angular/common/locales/pt';
 import { LOCALE_ID } from '@angular/core';
+import { EventoServiceService } from './service/evento-service.service';
 
 registerLocaleData(localePT, 'pt-BR')
 
@@ -34,11 +36,13 @@ registerLocaleData(localePT, 'pt-BR')
     MatNativeDateModule,
     MatInputModule,
     MatFormFieldModule,
+    MatTableModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
   ], 
   providers: [
+    EventoServiceService,
    { provide: LOCALE_ID, useValue: 'pt-BR'}
   ]
 })

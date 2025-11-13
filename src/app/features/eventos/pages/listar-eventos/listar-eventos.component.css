@@ -7,10 +7,30 @@
 }
 
 .card {
-   width: 50%;
+   width: 80%;
    height: 70vh;
    display: flex;
    flex-direction: column;
    align-items: center;
    margin-top: 30px;
+}
+
+.table {
+    width: 80vw;
+}
+
+.filter {
+    width: 400px;
+}
+
+.icon {
+    cursor: pointer;
+    color: rgb(13, 68, 119);
+    transition-property: all;
+    transition-duration: 0.4s;
+}
+
+.icon:hover {
+    color: rgb(13, 119, 78);
+    font-size: 30px;
 }

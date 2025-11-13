@@ -13,6 +13,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatIconModule } from '@angular/material/icon'
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import localePT from '@angular/common/locales/pt';
 import { LOCALE_ID } from '@angular/core';
@@ -37,7 +39,9 @@ registerLocaleData(localePT, 'pt-BR')
     MatInputModule,
     MatFormFieldModule,
     MatTableModule,
+    MatPaginatorModule,
     FormsModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     HttpClientModule,
   ], 

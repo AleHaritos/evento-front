@@ -1,0 +1,43 @@
+.container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 30px;
+}
+
+.card {
+   width: 80%;
+   height: 70vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 30px;
+}
+
+.form {
+    display: flex;
+    margin-left: 10%;
+    flex-direction: column;
+}
+
+.groupField {
+    display: flex;
+}
+
+.formFieldMedium{
+    width: 20vw;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.formFieldBig {
+    width: 30vw;
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 80px;
+    align-self: center;
+    color: #FFF;
+}

@@ -15,7 +15,6 @@ export class ListarEventosComponent implements AfterViewInit {
     private service: EventoServiceService
   ) { }
 
-  dataSource!: MatTableDataSource<Evento>
   eventos: Evento[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -26,7 +25,7 @@ export class ListarEventosComponent implements AfterViewInit {
     this.carregarEventos(event.pageIndex, event.pageSize);
   });
 
-  this.carregarEventos(0, this.paginator.pageSize || 10);
+  this.carregarEventos(0, this.paginator.pageSize || 5);
 }
 
 carregarEventos(pageIndex: number, pageSize: number) {
@@ -34,8 +33,6 @@ carregarEventos(pageIndex: number, pageSize: number) {
     this.eventos = response.eventos; 
     this.paginator.length = response.quantidadeEvento 
   });
-
-  console.log(pageIndex, pageSize)
 }
 
   displayedColumns: string[] = ['id', 'titulo', 'descricao', 'dataHoraEvento', 'local', 'detalhe'];

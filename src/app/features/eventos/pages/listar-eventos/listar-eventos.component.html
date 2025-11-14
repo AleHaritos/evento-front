@@ -33,7 +33,7 @@
 
                 <ng-container matColumnDef="detalhe">
                     <th mat-header-cell *matHeaderCellDef style="padding-left: 13%;"> Detalhes </th>
-                    <td mat-cell *matCellDef="let element" style="padding-left: 14%;"> <mat-icon
+                    <td mat-cell *matCellDef="let element" style="padding-left: 14%;"> <mat-icon routerLink="/detalhes/{{ element.id }}"
                             class="icon">settings_suggest</mat-icon> </td>
                 </ng-container>
 

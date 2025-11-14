@@ -15,7 +15,7 @@ export class DetalheEventoComponent implements OnInit {
   constructor(
     private service: EventoServiceService,
     private route: ActivatedRoute,
-    private router: Router, 
+    private router: Router,
     private util: UtilService
   ) { }
 
@@ -53,21 +53,25 @@ export class DetalheEventoComponent implements OnInit {
       const hora = this.formsEvento.get('horaEvento')?.value;
 
       const [h, m] = hora.split(':').map(Number);
-      const dataHora = new Date(data);
-      dataHora.setHours(h);
-      dataHora.setMinutes(m);
+      const ano = data.getFullYear();
+      const mes = String(data.getMonth() + 1).padStart(2, '0');
+      const dia = String(data.getDate()).padStart(2, '0');
+      const horaFormatada = String(h).padStart(2, '0');
+      const minutoFormatado = String(m).padStart(2, '0');
+
+      const localDateTime = `${ano}-${mes}-${dia}T${horaFormatada}:${minutoFormatado}:00`;
+
 
       const evento: Evento = {
         titulo: this.formsEvento.get("titulo")?.value,
         descricao: this.formsEvento.get("descricao")?.value,
         local: this.formsEvento.get("local")?.value,
-        dataHoraEvento: dataHora.toISOString()
+        dataHoraEvento: localDateTime
       }
       this.service.alterarEvento(evento, this.id).subscribe(res => {
         this.util.snackBar("Evento alterado com sucesso!", 1)
         this.router.navigate(["/listar-eventos"])
       })
-
     }
   }
 

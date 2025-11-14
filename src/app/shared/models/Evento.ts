@@ -5,3 +5,8 @@ export interface Evento {
     local: string,
     dataHoraEvento: string
 }
+
+export interface EventoPaginacao {
+    eventos: Evento[],
+    quantidadeEvento: number
+}

@@ -9,7 +9,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
   templateUrl: './listar-eventos.component.html',
   styleUrls: ['./listar-eventos.component.css']
 })
-export class ListarEventosComponent implements OnInit, AfterViewInit {
+export class ListarEventosComponent implements AfterViewInit {
 
   constructor(
     private service: EventoServiceService
@@ -19,11 +19,6 @@ export class ListarEventosComponent implements OnInit, AfterViewInit {
   eventos: Evento[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  ngOnInit(): void {
-    
-  
-  }
 
 
   ngAfterViewInit() {
@@ -36,8 +31,8 @@ export class ListarEventosComponent implements OnInit, AfterViewInit {
 
 carregarEventos(pageIndex: number, pageSize: number) {
   this.service.buscarEventos(pageIndex, pageSize).subscribe(response => {
-    this.eventos = response; // lista de eventos
-    this.paginator.length = 6; // total de registros
+    this.eventos = response.eventos; 
+    this.paginator.length = response.quantidadeEvento 
   });
 
   console.log(pageIndex, pageSize)

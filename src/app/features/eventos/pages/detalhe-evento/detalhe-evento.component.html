@@ -1,0 +1,60 @@
+<div class="container">
+    <mat-card class="card">
+        <mat-card-content class="content">
+            <form [formGroup]="formsEvento" class="form">
+                <span class="groupField">
+                    <mat-form-field appearance="fill" class="formFieldMedium">
+                        <mat-label>Id:</mat-label>
+                        <input type="text" matInput formControlName="id" readonly="true" />
+                        
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="formFieldMedium">
+                        <mat-label>Título:</mat-label>
+                        <input type="text" matInput formControlName="titulo" placeholder="Título..." />
+                        <mat-error
+                            *ngIf="this.formsEvento.get('titulo')?.hasError('maxlength') && formsEvento.get('titulo')?.touched">
+                            Números de caractéres
+                            excessivos</mat-error>
+                    </mat-form-field>
+                </span>
+
+                <span class="groupField">
+                    <mat-form-field class="formFieldMedium">
+                        <mat-label>Data evento</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dataEvento">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker">
+                            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field class="formFieldMedium">
+                        <input matInput type="time" formControlName="horaEvento">
+                    </mat-form-field>
+                </span>
+                <span class="groupField">
+                    <mat-form-field appearance="fill" class="formFieldMedium">
+                        <mat-label>Local:</mat-label>
+                        <input type="text" matInput formControlName="local" placeholder="Local..." />
+                        <mat-error
+                            *ngIf="this.formsEvento.get('local')?.hasError('maxlength') && formsEvento.get('local')?.touched">
+                            Números de caractéres
+                            excessivos</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="formFieldBig">
+                        <mat-label>Descrição:</mat-label>
+                        <input type="text" matInput formControlName="descricao" placeholder="Descrição..." />
+                        <mat-error
+                            *ngIf="this.formsEvento.get('descricao')?.hasError('maxlength') && formsEvento.get('descricao')?.touched">
+                            Números de
+                            caractéres
+                            excessivos</mat-error>
+                    </mat-form-field>
+                </span>
+                <button mat-raised-button color="primary" (click)="submeter()" class="btn">Editar Evento</button>
+                <button mat-raised-button color="warn" (click)="deletar()" class="btn">Deletar Evento</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

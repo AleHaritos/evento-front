@@ -5,6 +5,7 @@ import { FormsEventosComponent } from './pages/forms-eventos/forms-eventos.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
+import { RouterModule } from '@angular/router';
 
 import { MatInputModule } from '@angular/material/input'
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -19,6 +20,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import localePT from '@angular/common/locales/pt';
 import { LOCALE_ID } from '@angular/core';
 import { EventoServiceService } from './service/evento-service.service';
+import { DetalheEventoComponent } from './pages/detalhe-evento/detalhe-evento.component';
 
 registerLocaleData(localePT, 'pt-BR')
 
@@ -27,7 +29,8 @@ registerLocaleData(localePT, 'pt-BR')
 @NgModule({
   declarations: [    
       ListarEventosComponent,
-      FormsEventosComponent
+      FormsEventosComponent,
+      DetalheEventoComponent
     ],
   imports: [
     CommonModule,
@@ -44,6 +47,7 @@ registerLocaleData(localePT, 'pt-BR')
     MatSnackBarModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule
   ], 
   providers: [
     EventoServiceService,
